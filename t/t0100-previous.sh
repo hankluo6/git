@@ -41,7 +41,7 @@ test_expect_success 'merge @{-1}' '
 	git checkout other &&
 	git checkout main &&
 	git merge @{-1} &&
-	git cat-file commit HEAD | grep "Merge branch '\''other'\''"
+	git cat-file commit HEAD >actual && grep "Merge branch '\''other'\''" actual
 '
 
 test_expect_success 'merge @{-1}~1' '
